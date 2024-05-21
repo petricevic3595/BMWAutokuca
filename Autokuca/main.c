@@ -81,6 +81,9 @@ int main() {
     } while (odabir != 10);
 
     free(automobili);
+    automobili = NULL;
+
+
 
     return 0;
 }

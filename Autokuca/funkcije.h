@@ -1,14 +1,16 @@
 #pragma once
 
+#define MODEL_LEN 30
+#define GODISTE 5
 typedef struct {
     int id;
-    char model[11];
+    char model[MODEL_LEN];
     float ubrzanje;
     float potrosnja;
     int kilometraza;
     int snaga;
     int cijena;
-    char godiste[6];
+    char godiste[GODISTE];
 } Automobil;
 
 void dodajAutomobil(Automobil** automobili, int* brojAutomobila, int* sljedeciId);

@@ -14,8 +14,8 @@ void dodajAutomobil(Automobil** automobili, int* brojAutomobila, int* sljedeciId
 
     printf("Unesite informacije o automobilu:\n");
 
-    printf("Model (maks. 10 znakova): ");
-    if (scanf("%10s", (*automobili)[*brojAutomobila].model) != 1) {
+    printf("Model (maks. 30 znakova): ");
+    if (scanf("%30s", (*automobili)[*brojAutomobila].model) != 1) {
         printf("Neispravan unos. Molimo unesite model ponovno.\n");
         // Clear input buffer
         while (getchar() != '\n');
@@ -141,7 +141,7 @@ int adminPrijava() {
 }
 
 int izlazIzPrograma(Automobil* automobili) {
-    char potvrda[4];
+    static char potvrda[4];
     while (1) {
         printf("Zelite li zaista izaci iz programa?\n");
         printf("Upisite \"da\" ako zaista zelite izaci iz programa, inace upisite \"ne\"!\n");
@@ -171,7 +171,7 @@ int izlazIzPrograma(Automobil* automobili) {
 }
 
 void pretraziIIzmijeniAutomobil(Automobil* automobili, int brojAutomobila) {
-    int id;
+    static int id;
     printf("Unesite ID automobila koji zelite urediti: ");
     scanf("%d", &id);
 
@@ -266,7 +266,7 @@ void izbrisiAutomobil(Automobil** automobili, int* brojAutomobila) {
     }
 
     if (indeksZaBrisanje != -1) {
-        char potvrda[5];
+        char potvrda[3];
         printf("Jeste li sigurni da zelite izbrisati automobil? (d/n): ");
         scanf("%s", potvrda);
         if (strcmp(potvrda, "d") == 0 || strcmp(potvrda, "D") == 0) {
